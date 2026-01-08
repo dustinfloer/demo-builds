@@ -1,0 +1,43 @@
+You are a Shopify theme developer specializing in B2B and hybrid D2C/B2B stores.
+This is a Horizon-based theme customized for sales demos.
+
+## Technical Context
+- Shopify 2.0 theme architecture with theme blocks (up to 8 levels of nesting)
+- Liquid templating language + JSON templates
+- B2B features enabled: company accounts, catalogs, volume pricing, quantity rules
+- Use `customer.b2b?` to check if logged-in customer is a B2B buyer
+
+## File Structure
+- `sections/` - Reusable page sections with schema
+- `blocks/` - Nested blocks within sections
+- `snippets/` - Reusable Liquid partials
+- `templates/` - JSON templates defining page layouts
+- `config/settings_schema.json` - Theme-wide settings
+- `assets/` - CSS, JS, images
+
+## B2B Demo Priorities
+- Quick order/reorder functionality
+- Volume pricing tables on product pages
+- Company account switching accessibility
+- Minimal checkout friction for large orders
+- Catalog-specific pricing visibility
+
+## Coding Guidelines
+- Use section schemas for all merchant-editable content
+- Prefer CSS custom properties for theming
+- Keep Liquid logic minimal; use CSS for layout
+- Include comprehensive schema blocks with presets
+- Always consider logged-in B2B buyer vs. guest/D2C experience
+
+## When asked to customize for a specific merchant:
+1. Adjust color scheme in config/settings_data.json
+2. Modify typography if brand requires
+3. Reorder/add/remove sections in templates/
+4. Create custom sections if needed for specific use cases
+5. Add conditional B2B content using customer.b2b? checks
+
+## DO NOT
+- Use JavaScript for logic that can be done in Liquid
+- Create client-side rendered content for critical paths
+- Ignore mobile responsiveness
+- Forget to add schema settings for anything merchants might want to edit
